@@ -10,20 +10,18 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.hawkhacks.catchup.navigation.SetupNavGraph
+import com.hawkhacks.catchup.ui.theme.AnimatedSplashScreenTheme
 import com.hawkhacks.catchup.ui.theme.CatchUpTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CatchUpTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+            AnimatedSplashScreenTheme{
+                val navController = rememberNavController()
+                SetupNavGraph(navController = navController)
             }
         }
     }
@@ -38,6 +36,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     CatchUpTheme {
-        Greeting("Android")
+        //Greeting("Android")
     }
 }
