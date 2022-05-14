@@ -1,13 +1,11 @@
 package com.hawkhacks.catchup.navigation
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.hawkhacks.catchup.AnimatedSplashScreen
+import com.hawkhacks.catchup.HomeScreen
 
 @Composable
 fun SetupNavGraph(navController: NavHostController) {
@@ -19,7 +17,7 @@ fun SetupNavGraph(navController: NavHostController) {
             AnimatedSplashScreen(navController = navController)
         }
         composable(route = Screen.Home.route) {
-            Box(modifier = Modifier.fillMaxSize())
+            HomeScreen(navController = navController)
         }
     }
 }
